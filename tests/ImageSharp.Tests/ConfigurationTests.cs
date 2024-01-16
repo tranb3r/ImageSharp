@@ -26,7 +26,7 @@ public class ConfigurationTests
     {
         // The shallow copy of configuration should behave exactly like the default configuration,
         // so by using the copy, we test both the default and the copy.
-        this.DefaultConfiguration = Configuration.CreateDefaultInstance().Clone();
+        this.DefaultConfiguration = LazyConfiguration.CreateDefaultInstance().Clone();
         this.ConfigurationEmpty = new Configuration();
     }
 
@@ -118,7 +118,7 @@ public class ConfigurationTests
     [Fact]
     public void DefaultConfigurationHasCorrectFormatCount()
     {
-        var config = Configuration.CreateDefaultInstance();
+        var config = LazyConfiguration.CreateDefaultInstance();
 
         Assert.Equal(this.expectedDefaultConfigurationCount, config.ImageFormats.Count());
     }
@@ -170,7 +170,7 @@ public class ConfigurationTests
         {
             var c1 = new Configuration();
             var c2 = new Configuration(new MockConfigurationModule());
-            var c3 = Configuration.CreateDefaultInstance();
+            var c3 = LazyConfiguration.CreateDefaultInstance();
 
             Assert.Same(MemoryAllocator.Default, Configuration.Default.MemoryAllocator);
             Assert.Same(MemoryAllocator.Default, c1.MemoryAllocator);

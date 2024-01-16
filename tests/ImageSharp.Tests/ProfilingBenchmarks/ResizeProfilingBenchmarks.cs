@@ -9,7 +9,7 @@ namespace SixLabors.ImageSharp.Tests.ProfilingBenchmarks;
 
 public class ResizeProfilingBenchmarks : MeasureFixture
 {
-    private readonly Configuration configuration = Configuration.CreateDefaultInstance();
+    private readonly Configuration configuration = LazyConfiguration.CreateDefaultInstance();
 
     public ResizeProfilingBenchmarks(ITestOutputHelper output)
         : base(output)

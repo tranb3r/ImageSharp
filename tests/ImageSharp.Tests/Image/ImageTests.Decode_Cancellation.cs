@@ -80,7 +80,7 @@ public partial class ImageTests
                 }
             });
 
-            Configuration configuration = Configuration.CreateDefaultInstance();
+            Configuration configuration = LazyConfiguration.CreateDefaultInstance();
             configuration.FileSystem = new SingleStreamFileSystem((Stream)pausedStream);
             configuration.StreamProcessingBufferSize = (int)Math.Min(128, pausedStream.Length / 4);
 

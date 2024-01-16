@@ -34,7 +34,7 @@ public class DecodeWebp
     [GlobalSetup]
     public void ReadImages()
     {
-        this.configuration = Configuration.CreateDefaultInstance();
+        this.configuration = LazyConfiguration.CreateDefaultInstance();
         new WebpConfigurationModule().Configure(this.configuration);
 
         this.webpLossyBytes ??= File.ReadAllBytes(this.TestImageLossyFullPath);

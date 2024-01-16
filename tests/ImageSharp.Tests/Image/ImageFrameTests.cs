@@ -12,7 +12,7 @@ public class ImageFrameTests
 {
     public class Indexer
     {
-        private readonly Configuration configuration = Configuration.CreateDefaultInstance();
+        private readonly Configuration configuration = LazyConfiguration.CreateDefaultInstance();
 
         private void LimitBufferCapacity(int bufferCapacityInBytes)
         {

@@ -18,7 +18,7 @@ public class LoadResizeSaveProfilingBenchmarks : MeasureFixture
     [InlineData(TestImages.Jpeg.Baseline.Jpeg420Exif)]
     public void LoadResizeSave(string imagePath)
     {
-        var configuration = Configuration.CreateDefaultInstance();
+        var configuration = LazyConfiguration.CreateDefaultInstance();
         configuration.MaxDegreeOfParallelism = 1;
 
         DecoderOptions options = new()

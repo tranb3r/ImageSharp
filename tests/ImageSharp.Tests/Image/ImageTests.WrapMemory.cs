@@ -124,7 +124,7 @@ public partial class ImageTests
         [Fact]
         public void WrapMemory_CreatedImageIsCorrect()
         {
-            var cfg = Configuration.CreateDefaultInstance();
+            var cfg = LazyConfiguration.CreateDefaultInstance();
             var metaData = new ImageMetadata();
 
             var array = new Rgba32[25];
@@ -227,7 +227,7 @@ public partial class ImageTests
         [Fact]
         public void WrapMemory_FromBytes_CreatedImageIsCorrect()
         {
-            var cfg = Configuration.CreateDefaultInstance();
+            var cfg = LazyConfiguration.CreateDefaultInstance();
             var metaData = new ImageMetadata();
 
             var array = new byte[25 * Unsafe.SizeOf<Rgba32>()];
@@ -297,7 +297,7 @@ public partial class ImageTests
         [Fact]
         public unsafe void WrapMemory_Throws_OnTooLessWrongSize()
         {
-            var cfg = Configuration.CreateDefaultInstance();
+            var cfg = LazyConfiguration.CreateDefaultInstance();
             var metaData = new ImageMetadata();
 
             var array = new Rgba32[25];
@@ -320,7 +320,7 @@ public partial class ImageTests
         [Fact]
         public unsafe void WrapMemory_FromPointer_CreatedImageIsCorrect()
         {
-            var cfg = Configuration.CreateDefaultInstance();
+            var cfg = LazyConfiguration.CreateDefaultInstance();
             var metaData = new ImageMetadata();
 
             var array = new Rgba32[25];

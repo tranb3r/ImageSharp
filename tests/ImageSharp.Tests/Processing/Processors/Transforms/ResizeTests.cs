@@ -103,7 +103,7 @@ public class ResizeTests
         using Image<TPixel> image0 = provider.GetImage();
         Size destSize = image0.Size / 4;
 
-        Configuration configuration = Configuration.CreateDefaultInstance();
+        Configuration configuration = LazyConfiguration.CreateDefaultInstance();
 
         int workingBufferSizeHintInBytes = workingBufferLimitInRows * destSize.Width * SizeOfVector4;
         TestMemoryAllocator allocator = new TestMemoryAllocator();
@@ -159,7 +159,7 @@ public class ResizeTests
         expected.Mutate(c => c.Resize(destSize, KnownResamplers.Bicubic, false));
 
         // Replace configuration:
-        provider.Configuration = Configuration.CreateDefaultInstance();
+        provider.Configuration = LazyConfiguration.CreateDefaultInstance();
 
         // Note: when AllocatorCapacityInBytes < WorkingBufferSizeHintInBytes,
         // ResizeProcessor is expected to use the minimum of the two values, when establishing the working buffer.

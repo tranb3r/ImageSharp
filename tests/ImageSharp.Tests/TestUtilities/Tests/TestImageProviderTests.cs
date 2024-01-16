@@ -337,7 +337,7 @@ public class TestImageProviderTests
     {
         using (provider.GetImage())
         {
-            var customConfiguration = Configuration.CreateDefaultInstance();
+            var customConfiguration = LazyConfiguration.CreateDefaultInstance();
             provider.Configuration = customConfiguration;
 
             using Image<TPixel> image2 = provider.GetImage();

@@ -98,7 +98,7 @@ public partial class ImageTests
 
     public class Indexer
     {
-        private readonly Configuration configuration = Configuration.CreateDefaultInstance();
+        private readonly Configuration configuration = LazyConfiguration.CreateDefaultInstance();
 
         private void LimitBufferCapacity(int bufferCapacityInBytes) =>
             this.configuration.MemoryAllocator = new TestMemoryAllocator { BufferCapacityInBytes = bufferCapacityInBytes };
@@ -263,7 +263,7 @@ public partial class ImageTests
 
     public class Dispose
     {
-        private readonly Configuration configuration = Configuration.CreateDefaultInstance();
+        private readonly Configuration configuration = LazyConfiguration.CreateDefaultInstance();
 
         public void MultipleDisposeCalls()
         {

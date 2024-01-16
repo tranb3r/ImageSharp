@@ -10,7 +10,7 @@ public class BufferedReadStreamTests
     private readonly Configuration configuration;
 
     public BufferedReadStreamTests()
-        => this.configuration = Configuration.CreateDefaultInstance();
+        => this.configuration = LazyConfiguration.CreateDefaultInstance();
 
     public static readonly TheoryData<int> BufferSizes =
         new()

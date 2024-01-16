@@ -23,7 +23,7 @@ public abstract partial class TestImageProvider<TPixel> : ITestImageProvider, IX
 
     public virtual string SourceFileOrDescription => string.Empty;
 
-    public Configuration Configuration { get; set; } = Configuration.CreateDefaultInstance();
+    public Configuration Configuration { get; set; } = LazyConfiguration.CreateDefaultInstance();
 
     /// <summary>
     /// Gets the utility instance to provide information about the test image & manage input/output.

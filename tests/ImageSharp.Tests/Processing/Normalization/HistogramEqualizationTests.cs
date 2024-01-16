@@ -213,7 +213,7 @@ public class HistogramEqualizationTests
 
         // https://github.com/SixLabors/ImageSharp/discussions/1640
         // Test using isolated memory to ensure clean buffers for reference
-        provider.Configuration = Configuration.CreateDefaultInstance();
+        provider.Configuration = LazyConfiguration.CreateDefaultInstance();
         var options = new HistogramEqualizationOptions
         {
             Method = HistogramEqualizationMethod.AdaptiveTileInterpolation,
